@@ -5,27 +5,24 @@ import { ThemeProvider, createTheme } from "@mui/material";
 import { useState } from "react";
 
 function App() {
-  
   const [darkMode, setDarkMode] = useState(false);
   const theme = createTheme({
     palette: {
-      mode: darkMode ? 'dark': 'light'
-    }
-  })
+      mode: darkMode ? "dark" : "light",
+    },
+  });
 
   const handleChange = () => {
-    setDarkMode(!darkMode)
-  }
+    setDarkMode(!darkMode);
+  };
   return (
-    <>
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <Navbar click={handleChange} mode={darkMode}>
-        <AllPages/>
+          <AllPages />
         </Navbar>
       </BrowserRouter>
-      </ThemeProvider>
-    </>
+    </ThemeProvider>
   );
 }
 

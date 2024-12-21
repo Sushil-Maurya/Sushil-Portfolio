@@ -31,7 +31,7 @@ const navItems = [
   "Contact",
 ];
 
-function Navbar(props) {
+function Navbar(props: any) {
   const navigate = useNavigate();
   const { window, children } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
