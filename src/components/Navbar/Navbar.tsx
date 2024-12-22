@@ -15,11 +15,11 @@ import {
   Toolbar,
   Tooltip,
   Typography,
-  useTheme,
+  // useTheme,
 } from "@mui/material";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { motion } from "framer-motion";
 const drawerWidth = 240;
 const navItems = [
   "Home",
@@ -35,7 +35,7 @@ function Navbar(props: any) {
   const navigate = useNavigate();
   const { window, children } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
-  const theme = useTheme();
+  // const theme = useTheme();
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
@@ -85,12 +85,12 @@ function Navbar(props: any) {
                 textAlign: "center",
                 display: { xs: "none", sm: "block" },
               }}>
-              <Tooltip title='Open settings'>
+              <Tooltip title='Sushil'>
                 <IconButton
                   // onClick={handleOpenUserMenu}
                   sx={{ p: 0 }}>
                   <Avatar
-                    alt='Remy Sharp'
+                    alt='sushil'
                     src='https://i.pinimg.com/736x/f3/10/25/f31025f697c37e0fafaa3fffdf221103.jpg'
                   />
                 </IconButton>
@@ -104,20 +104,26 @@ function Navbar(props: any) {
               }}
               gap={4}>
               {navItems.map((item, i) => (
-                <Button
+                <motion.div
                   key={item}
-                  color='inherit'
-                  onClick={() => navigate(`/dashbord/${item.toLowerCase()}`)}>
-                  {item}
-                </Button>
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}>
+                  <Button
+                    color='inherit'
+                    onClick={() => navigate(`/dashbord/${item.toLowerCase()}`)}>
+                    {item}
+                  </Button>
+                </motion.div>
               ))}
             </Box>
-            <Button
-              color='inherit'
-              sx={{ margin: "auto", maxWidth: "5%" }}
-              onClick={props.click}>
-              {props.mode ? <LightMode /> : <DarkMode />}
-            </Button>
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              style={{ margin: "auto", maxWidth: "5%" }}>
+              <Button color='inherit' onClick={props.click}>
+                {props.mode ? <LightMode /> : <DarkMode />}
+              </Button>
+            </motion.div>
           </Toolbar>
         </AppBar>
         <nav>
