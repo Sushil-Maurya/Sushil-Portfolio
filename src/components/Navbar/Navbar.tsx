@@ -51,7 +51,7 @@ function Navbar(props: any) {
           <ListItem key={item} disablePadding>
             <ListItemButton
               sx={{ textAlign: "center" }}
-              onClick={() => navigate(`/dashbord/${item.toLowerCase()}`)}>
+              onClick={() => navigate(`/${item.toLowerCase()}`)}>
               <ListItemText primary={item} />
             </ListItemButton>
           </ListItem>
@@ -110,7 +110,7 @@ function Navbar(props: any) {
                   whileTap={{ scale: 0.9 }}>
                   <Button
                     color='inherit'
-                    onClick={() => navigate(`/dashbord/${item.toLowerCase()}`)}>
+                    onClick={() => navigate(`/${item.toLowerCase()}`)}>
                     {item}
                   </Button>
                 </motion.div>

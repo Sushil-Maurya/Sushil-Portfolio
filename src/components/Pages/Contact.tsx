@@ -8,18 +8,11 @@ import {
   Box,
   CircularProgress,
   Alert,
+  useTheme,
 } from "@mui/material";
-import { styled } from "@mui/system";
 // import { EarthCanvas } from "./canvas";
 import SectionWrapper from "../hoc/SelectionWrapper";
 import { slideIn } from "../utils/motion";
-
-const StyledFormContainer = styled(Box)(({ theme }) => ({
-  backgroundColor: theme.palette.grey[900],
-  borderRadius: theme.shape.borderRadius,
-  padding: theme.spacing(4),
-  color: theme.palette.common.white,
-}));
 
 const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null);
@@ -30,7 +23,7 @@ const Contact = () => {
   });
   const [alert, setAlert] = useState<{ type?: string; message?: string }>({});
   const [loading, setLoading] = useState(false);
-
+  const theme = useTheme();
   const handleChange = (e: any) => {
     const { name, value } = e.target;
     setForm({
@@ -109,7 +102,13 @@ const Contact = () => {
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
         style={{ flex: 0.75 }}>
-        <StyledFormContainer>
+        <Box
+          sx={{
+            backgroundColor: theme.palette.grey[900],
+            borderRadius: theme.shape.borderRadius,
+            padding: theme.spacing(4),
+            color: theme.palette.common.white,
+          }}>
           <Typography variant='h6' gutterBottom>
             Get in touch
           </Typography>
@@ -161,7 +160,7 @@ const Contact = () => {
               </Button>
             </Box>
           </form>
-        </StyledFormContainer>
+        </Box>
       </motion.div>
 
       <motion.div

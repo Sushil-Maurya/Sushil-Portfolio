@@ -3,7 +3,7 @@ import { Typography, Container, Box } from "@mui/material";
 import { motion } from "framer-motion";
 import StarWrapper from "../hoc/SelectionWrapper";
 
-const Home1 = () => {
+const HomeView = () => {
   return (
     <Container>
       <Box sx={{ my: 4 }}>
@@ -28,5 +28,5 @@ const Home1 = () => {
   );
 };
 
-const Home = StarWrapper(Home1, "home");
+const Home = StarWrapper(HomeView, "home");
 export default Home;

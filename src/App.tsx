@@ -6,7 +6,6 @@ import { useState } from "react";
 import Footer from "./components/Pages/Footer";
 
 function App() {
-  console.log(process.env.REACT_APP_EMAILJS_SERVICE_ID);
   const [darkMode, setDarkMode] = useState(false);
   const theme = createTheme({
     palette: {

@@ -9,28 +9,15 @@ import Skills from "./components/Pages/Skills";
 import Resume from "./components/Pages/Resume";
 function AllPages() {
   return (
-    <>
-      <Routes>
-        <Route
-          path='/dashbord'
-          element={
-            <>
-              <Home />
-              <About />
-              <Projects />
-              <Contact />
-            </>
-          }
-        />
-        <Route path='/dashbord/home' element={<Home />} />
-        <Route path='/dashbord/about' element={<About />} />
-        <Route path='/dashbord/contact' element={<Contact />} />
-        <Route path='/dashbord/education' element={<Education />} />
-        <Route path='/dashbord/projects' element={<Projects />} />
-        <Route path='/dashbord/skills' element={<Skills />} />
-        <Route path='/dashbord/resume' element={<Resume />} />
-      </Routes>
-    </>
+    <Routes>
+      <Route path='/home' element={<Home />} />
+      <Route path='/about' element={<About />} />
+      <Route path='/contact' element={<Contact />} />
+      <Route path='/education' element={<Education />} />
+      <Route path='/projects' element={<Projects />} />
+      <Route path='/skills' element={<Skills />} />
+      <Route path='/resume' element={<Resume />} />
+    </Routes>
   );
 }
 
